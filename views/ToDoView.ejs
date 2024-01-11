@@ -1,0 +1,702 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-B6WN4PgRc5j5FqJjC52VlKjcr0ICOfN6T53lHCiV/F3oOkZH5UZoCcPxUzpWTJGqX17yQ7vT7dNTrzGZm7uyNw=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+
+<style>
+    body {
+        background-color: #f9f9fa
+    }
+
+    .flex {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto
+    }
+
+    @media (max-width:991.98px) {
+        .padding {
+            padding: 1.5rem
+        }
+    }
+
+    @media (max-width:767.98px) {
+        .padding {
+            padding: 1rem
+        }
+    }
+
+    .padding {
+        padding: 5rem
+    }
+
+    .card {
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        -ms-box-shadow: none
+    }
+
+    .pl-3,
+    .px-3 {
+        padding-left: 1rem !important
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid #d2d2dc;
+        border-radius: 0
+    }
+
+    .pr-3,
+    .px-3 {
+        padding-right: 1rem !important
+    }
+
+    .card .card-body {
+        padding: 1.25rem 1.75rem
+    }
+
+    .card-body {
+        flex: 1 1 auto;
+        padding: 1.25rem
+    }
+
+    .card .card-title {
+        color: #000000;
+        margin-bottom: 0.625rem;
+        text-transform: capitalize;
+        font-size: 0.875rem;
+        font-weight: 500
+    }
+
+    .add-items {
+        margin-bottom: 1.5rem;
+        overflow: hidden
+    }
+
+    .d-flex {
+        display: flex !important
+    }
+
+    .add-items input[type="text"] {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        width: 100%;
+        background: transparent
+    }
+
+    .form-control {
+        border: 1px solid #f3f3f3;
+        font-weight: 400;
+        font-size: 0.875rem
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        padding: 0.875rem 1.375rem;
+        font-size: 1rem;
+        line-height: 1;
+        color: #495057;
+        background-color: #ffffff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 2px;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out
+    }
+
+    .add-items .btn {
+        margin-left: .5rem
+    }
+
+    .btn {
+        font-size: 0.875rem;
+        line-height: 1;
+        font-weight: 400;
+        padding: .7rem 1.5rem;
+        border-radius: 0.1275rem
+    }
+
+    .list-wrapper {
+        height: 100%;
+        max-height: 100%
+    }
+
+    .add-items {
+        margin-bottom: 1.5rem;
+        overflow: hidden
+    }
+
+    .add-items input[type="text"] {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        width: 100%;
+        background: transparent
+    }
+
+    .add-items .btn,
+    .add-items .fc button,
+    .fc .add-items button,
+    .add-items .ajax-upload-dragdrop .ajax-file-upload,
+    .ajax-upload-dragdrop .add-items .ajax-file-upload,
+    .add-items .swal2-modal .swal2-buttonswrapper .swal2-styled,
+    .swal2-modal .swal2-buttonswrapper .add-items .swal2-styled,
+    .add-items .wizard>.actions a,
+    .wizard>.actions .add-items a {
+        margin-left: .5rem
+    }
+
+    .rtl .add-items .btn,
+    .rtl .add-items .fc button,
+    .fc .rtl .add-items button,
+    .rtl .add-items .ajax-upload-dragdrop .ajax-file-upload,
+    .ajax-upload-dragdrop .rtl .add-items .ajax-file-upload,
+    .rtl .add-items .swal2-modal .swal2-buttonswrapper .swal2-styled,
+    .swal2-modal .swal2-buttonswrapper .rtl .add-items .swal2-styled,
+    .rtl .add-items .wizard>.actions a,
+    .wizard>.actions .rtl .add-items a {
+        margin-left: auto;
+        margin-right: .5rem
+    }
+
+    .list-wrapper {
+        height: 100%;
+        max-height: 100%
+    }
+
+    .list-wrapper ul {
+        padding: 0;
+        text-align: left;
+        list-style: none;
+        margin-bottom: 0
+    }
+
+    .list-wrapper ul li {
+        font-size: .9375rem;
+        padding: .4rem 0;
+        border-bottom: 1px solid #f3f3f3
+    }
+
+    .list-wrapper ul li:first-child {
+        border-bottom: none
+    }
+
+    .list-wrapper ul li .form-check {
+        max-width: 90%;
+        margin-top: .25rem;
+        margin-bottom: .25rem
+    }
+
+    .list-wrapper ul li .form-check label:hover {
+        cursor: pointer
+    }
+
+    .list-wrapper input[type="checkbox"] {
+        margin-right: 15px
+    }
+
+    .list-wrapper .remove {
+        cursor: pointer;
+        font-size: 1.438rem;
+        font-weight: 600;
+        width: 1.25rem;
+        height: 1.25rem;
+        line-height: 20px;
+        text-align: center
+    }
+
+    .list-wrapper .completed {
+        text-decoration: line-through;
+        text-decoration-color: #3da5f4
+    }
+
+    .list-wrapper ul li .form-check {
+        max-width: 90%;
+        margin-top: .25rem;
+        margin-bottom: .25rem
+    }
+
+    .list-wrapper ul li .form-check,
+    .list-wrapper ul li .form-check .form-check-label,
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-name,
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-designation,
+    .email-wrapper .mail-list-container .mail-list .content .sender-name,
+    .email-wrapper .message-body .attachments-sections ul li .details p.file-name,
+    .settings-panel .chat-list .list .info p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 100%;
+        white-space: nowrap
+    }
+
+    .form-check {
+        position: relative;
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 0
+    }
+
+    .list-wrapper ul li .form-check,
+    .list-wrapper ul li .form-check .form-check-label,
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-name,
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-designation,
+    .email-wrapper .mail-list-container .mail-list .content .sender-name,
+    .email-wrapper .message-body .attachments-sections ul li .details p.file-name,
+    .settings-panel .chat-list .list .info p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 100%;
+        white-space: nowrap
+    }
+
+    .form-check .form-check-label {
+        min-height: 18px;
+        display: block;
+        margin-left: 1.75rem;
+        font-size: 0.875rem;
+        line-height: 1.5
+    }
+
+    .form-check-label {
+        margin-bottom: 0
+    }
+
+    .list-wrapper input[type="checkbox"] {
+        margin-right: 15px
+    }
+
+    .form-check .form-check-label input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-left: 0;
+        margin-top: 0;
+        z-index: 1;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0)
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        box-sizing: border-box;
+        padding: 0
+    }
+
+    .list-wrapper ul li .form-check,
+    .list-wrapper ul li .form-check .form-check-label,
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-name,
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-designation,
+    .email-wrapper .mail-list-container .mail-list .content .sender-name,
+    .email-wrapper .message-body .attachments-sections ul li .details p.file-name,
+    .settings-panel .chat-list .list .info p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 100%;
+        white-space: nowrap
+    }
+
+    .form-check .form-check-label input[type="checkbox"]+.input-helper:before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        border-radius: 2px;
+        border: solid #405189;
+        border-width: 2px;
+        -webkit-transition: all;
+        -moz-transition: all;
+        -ms-transition: all;
+        -o-transition: all;
+        transition: all;
+        transition-duration: 0s;
+        -webkit-transition-duration: 250ms;
+        transition-duration: 250ms
+    }
+
+    .form-check .form-check-label input[type="checkbox"]+.input-helper:before,
+    .form-check .form-check-label input[type="checkbox"]+.input-helper:after {
+        position: absolute;
+        top: 0;
+        left: 0
+    }
+
+    .form-check .form-check-label input[type="checkbox"]+.input-helper:after {
+        -webkit-transition: all;
+        -moz-transition: all;
+        -ms-transition: all;
+        -o-transition: all;
+        transition: all;
+        transition-duration: 0s;
+        -webkit-transition-duration: 250ms;
+        transition-duration: 250ms;
+        font-family: Material Design Icons;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);
+        content: '\F12C';
+        font-size: .9375rem;
+        font-weight: bold;
+        color: #ffffff
+    }
+
+    .form-check .form-check-label input[type="checkbox"]+.input-helper:before,
+    .form-check .form-check-label input[type="checkbox"]+.input-helper:after {
+        position: absolute;
+        top: 0;
+        left: 0
+    }
+
+    .form-check .form-check-label input[type="checkbox"]:checked+.input-helper:before {
+        background: #405189;
+        border-width: 0
+    }
+
+    .form-check .form-check-label input[type="checkbox"]+.input-helper:before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        border-radius: 2px;
+        border: solid #405189;
+        border-width: 2px;
+        -webkit-transition: all;
+        -moz-transition: all;
+        -ms-transition: all;
+        -o-transition: all;
+        transition: all;
+        transition-duration: 0s;
+        -webkit-transition-duration: 250ms;
+        transition-duration: 250ms
+    }
+
+    .form-check .form-check-label input[type="checkbox"]+.input-helper:after {
+        font-family: FontAwesome;
+        content: "\f095";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        color: #fff
+    }
+
+    .text-primary,
+    .list-wrapper .completed .remove {
+        color: #405189 !important
+    }
+
+    .list-wrapper .remove {
+        cursor: pointer;
+        font-size: 1.438rem;
+        font-weight: 600;
+        width: 1.25rem;
+        height: 1.25rem;
+        line-height: 20px;
+        text-align: center
+    }
+
+    .ml-auto,
+    .list-wrapper .remove,
+    .mx-auto {
+        margin-left: auto !important
+    }
+
+    .mdi-close-circle-outline:before {
+        content: "\F15A"
+    }
+
+    .list-wrapper ul li {
+        font-size: .9375rem;
+        padding: .4rem 0;
+        border-bottom: 1px solid #f3f3f3
+    }
+
+    .mdi:before {
+        font-family: FontAwesome;
+        content: "\f00d";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        font-size: .756em;
+        color: #405189
+    }
+
+    .list-wrapper ul {
+        padding: 0;
+        text-align: left;
+        list-style: none;
+        margin-bottom: 0
+    }
+
+    .flex-column-reverse {
+        flex-direction: column-reverse !important
+    }
+
+    .edit {
+        margin-left: 0.5rem;
+        color: #405189;
+        cursor: pointer;
+        font-size: 1.25rem;
+    }
+
+    .d-flex,
+    .loader-demo-box,
+    .distribution-chart-legend .distribution-chart,
+    .distribution-chart-legend .distribution-chart .item,
+    .list-wrapper ul li,
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item a,
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user,
+    .email-wrapper .mail-list-container .mail-list .details,
+    .email-wrapper .message-body .attachments-sections ul li .thumb,
+    .email-wrapper .message-body .attachments-sections ul li .details .buttons,
+    .lightGallery .image-tile .demo-gallery-poster,
+    .swal2-modal,
+    .navbar .navbar-menu-wrapper .navbar-nav,
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile,
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item {
+        display: flex !important
+    }
+</style>
+
+
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-md-12">
+                <div class="card px-3">
+                    <div class="card-body">
+                        <h4 class="card-title">Awesome Todo list</h4>
+                        <div class="add-items d-flex">
+                            <input type="text" class="form-control todo-list-input"
+                                placeholder="What do you need to do today?">
+                            <button class="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button>
+                            <button class="btn btn-info font-weight-bold todo-list-add-btn" id="getWeatherBtn">
+                                <i class="fas fa-cloud"></i> Get Weather
+                            </button>
+                        </div>
+                        <div class="list-wrapper">
+                            <ul class="d-flex flex-column-reverse todo-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    document.getElementById('getWeatherBtn').addEventListener('click', async function () {
+        // Prompt the user for the location
+        var location = prompt("Enter the location for weather information:");
+
+        // Check if the user entered a location
+        if (location !== null && location.trim() !== "") {
+            try {
+                // Call the function to get the weather information
+                const weatherData = await getWeather(location);
+
+                // Display weather information on the page
+                displayWeather(weatherData);
+            } catch (error) {
+                alert("Error fetching weather information. Please try again later.");
+                console.error(error);
+            }
+        }
+        else {
+            alert("Please enter a valid location.");
+        }
+    });
+
+    // Function to get today's weather using the OpenWeatherMap API
+    async function getWeather(location) {
+        const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${location}`;
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'c7f7c1e020msh513bc96a7964a08p18a4cdjsn6f0996293e6f',
+                'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+            }
+        };
+
+        try {
+            const response = await fetch(url, options);
+            // console.log(response);
+            // Check if the response status is in the 200 range
+            if (response.ok) {
+                const result = await response.json();
+                return result
+            } else {
+                // Handle non-successful response status
+                throw new Error(`Failed to fetch weather information. Status: ${response.status}`);
+            }
+        } catch (error) {
+            alert(`Error fetching weather information for ${location}. Please try again later.`);
+            console.error(error);
+        }
+    }
+
+    function displayWeather(weatherData) {
+        const weatherContainer = document.createElement('div');
+        weatherContainer.innerHTML = `
+            <h5>Weather Information for ${weatherData.location.name}, ${weatherData.location.region}, ${weatherData.location.country}</h5>
+            <p>Temperature: ${weatherData.current.temp_c}°C (${weatherData.current.temp_f}°F)</p>
+            <p>Condition: ${weatherData.current.condition.text}</p>
+            <img src="https:${weatherData.current.condition.icon}" alt="${weatherData.current.condition.text}">
+            <p>Wind: ${weatherData.current.wind_kph} km/h, ${weatherData.current.wind_dir}</p>
+            <p>Humidity: ${weatherData.current.humidity}%</p>
+            <p>Pressure: ${weatherData.current.pressure_mb} mb</p>
+            <p>Visibility: ${weatherData.current.vis_km} km</p>
+        `;
+
+        // Add the weather information to the page
+        document.querySelector('.list-wrapper').appendChild(weatherContainer);
+    }
+
+    let currentEditId = null;
+    let todoInput = document.querySelector('.todo-list-input');
+    let addButton = document.querySelector('.todo-list-add-btn');
+
+    //Function to create an item in the list
+    function createTodoItem(task) {
+        var newTodoItem = document.createElement('li');
+        newTodoItem.innerHTML = `
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="checkbox" type="checkbox"> ${task.toDo} <i class="input-helper"></i>
+                </label>
+            </div>
+            <i class="edit fas fa-pencil-alt" data-id="${task._id}"></i>
+            <i class="remove mdi mdi-close-circle-outline" data-id="${task._id}"></i>
+        `;
+        return newTodoItem;
+    }
+
+    //Adding events to the edit and remove icon 
+    document.querySelector('.list-wrapper').addEventListener('click', function (event) {
+        if (event.target.classList.contains('edit')) {
+            let id = event.target.getAttribute('data-id');
+            let currentTaskData = event.target.parentElement.querySelector('.form-check-label').textContent.trim();
+            todoInput.value = currentTaskData;
+            addButton.textContent = 'Edit';
+            currentEditId = id;
+        } else if (event.target.classList.contains('remove')) {
+            let id = event.target.getAttribute('data-id');
+            let confirmation = window.confirm("Are you sure you want to remove this item?");
+            if (confirmation) {
+                fetch('http://localhost:3000/api/update/' + id, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ isdeleted: true }),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data) {
+                            event.target.parentElement.remove();
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+            }
+        }
+    });
+
+    // Loading the data
+    window.addEventListener('DOMContentLoaded', async (event) => {
+        try {
+            const response = await fetch('http://localhost:3000/api/getallData');
+            const data = await response.json();
+            let todoList = document.querySelector('.todo-list');
+
+            // Display existing tasks
+            data.forEach(task => {
+                if (!task.isdeleted) {
+                    let newTodoItem = createTodoItem(task);
+                    todoList.prepend(newTodoItem);
+                }
+            });
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    });
+
+    // Adding the data in the list
+    document.querySelector('.todo-list-add-btn').addEventListener('click', function () {
+        let todoText = todoInput.value.trim();
+
+        if (todoText !== '') {
+            if (currentEditId) {
+                // If in edit mode, trigger the update function
+                updateTodoItem();
+            } else {
+                // If not in edit mode, add a new item
+                fetch('http://localhost:3000/api/save', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ toDo: todoText }),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        let todoList = document.querySelector('.todo-list');
+                        let newTodoItem = createTodoItem(data);
+                        todoList.prepend(newTodoItem);
+                        todoInput.value = '';
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+            }
+        }
+    });
+
+    // Function to update a todo item
+    function updateTodoItem() {
+        fetch(`http://localhost:3000/api/update/${currentEditId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ toDo: todoInput.value }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Update the task in the DOM
+                let existingTask = document.querySelector(`.edit[data-id="${currentEditId}"]`).parentElement;
+                if (existingTask) {
+                    existingTask.innerHTML = createTodoItem(data).innerHTML;
+                }
+
+                // Clear the input field and change the edit button back to add button
+                todoInput.value = '';
+                addButton.textContent = 'Add';
+                currentEditId = null;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
+</script>
